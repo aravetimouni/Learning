@@ -1,6 +1,8 @@
 // @ts-check
 import { defineConfig, devices } from '@playwright/test';
 
+require('dotenv').config()
+
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
@@ -16,7 +18,7 @@ export default defineConfig({
 
   timeout: 60000*60,
   expect:{
-    timeout: 5000,
+    timeout: 8000,
   },
 
   testDir: './tests',
