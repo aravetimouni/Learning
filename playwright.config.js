@@ -1,4 +1,4 @@
-// @ts-check
+// @ts-nocheck
 import { defineConfig, devices } from '@playwright/test';
 
 require('dotenv').config()
@@ -40,7 +40,8 @@ export default defineConfig({
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
     screenshot: 'on',
-    video: 'on'
+    video: 'on',
+    headless: true,
   },
 
   /* Configure projects for major browsers */

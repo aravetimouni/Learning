@@ -13,7 +13,7 @@ test("verfiy the username", async({page}) =>{
 
 })
 
-test.only("My program", async ({page}) => {
+test("My program", async ({page}) => {
 
   await page.goto("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login")
   await page.getByRole('textbox', { name: 'Username' }).fill(data.Username)
