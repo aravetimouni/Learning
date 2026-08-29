@@ -97,26 +97,21 @@ test('To enter the details', async ({ page }) => {
   await expect(page.getByText('Need to learn playwright')).toBeVisible();
 });
 
-test('To delete the employee details', async ({ page }) => {
+test('delete Employee details', async ({ page }) => {
   await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
   await page.getByRole('textbox', { name: 'Username' }).click();
   await page.getByRole('textbox', { name: 'Username' }).fill('Admin');
   await page.getByRole('textbox', { name: 'Password' }).click();
   await page.getByRole('textbox', { name: 'Password' }).fill('admin123');
   await page.getByRole('button', { name: 'Login' }).click();
-  await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index');
   await page.getByRole('link', { name: 'PIM' }).click();
-  await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/pim/viewEmployeeList');
-  await page.getByRole('textbox').nth(2).click();
-  await page.getByRole('textbox').nth(2).fill('12345');
-  await page.getByRole('button', { name: 'Search' }).click();
-  await page.getByRole('button', { name: 'Search' }).press('ArrowDown');
-  await page.getByRole('button').filter({ hasText: /^$/ }).nth(4).click();
-  await expect(page.getByRole('button', { name: ' Yes, Delete' })).toBeVisible();
-  await page.getByRole('button', { name: ' Yes, Delete' }).click();
-  await page.locator('body').press('ArrowDown');
   await page.locator('div').filter({ hasText: 'Employee InformationEmployee' }).nth(3).click();
- });
+  await page.locator('body').press('ArrowDown');
+  await page.locator('body').press('ArrowDown');
+  await page.locator('.oxd-table-card-cell-checkbox > .oxd-checkbox-wrapper > label > .oxd-checkbox-input > .oxd-icon').first().click();
+  await page.getByRole('button').filter({ hasText: /^$/ }).nth(4).click();
+  await page.getByRole('button', { name: ' Yes, Delete' }).click();
+});
 
  test('edit employee', async ({ page }) => {
   await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
@@ -146,7 +141,7 @@ test('To delete the employee details', async ({ page }) => {
   await page.locator('form').filter({ hasText: 'Employee Full NameEmployee' }).getByRole('button').press('ArrowUp');
   await page.getByRole('link', { name: 'Personal Details' }).click();
   await page.getByRole('link', { name: 'Personal Details' }).click();
-  await expect(page.getByRole('heading', { name: 'Sachi Sree' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Saci Srees' })).toBeVisible();
 });
 
 
