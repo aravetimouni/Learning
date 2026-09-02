@@ -27,7 +27,6 @@ test("Demoqa form submission with data from json file", async ({ page }) => {
   await page.getByRole('button', { name: 'Submit' }).click();
   });
 
-
 test("Demoqa form submission with data from faker", async ({ page }) => {
     await page.goto('https://demoqa.com/text-box');
     await page.getByRole('textbox', { name: 'Full Name' }).fill(faker.person.fullName());
