@@ -19,7 +19,7 @@ test("My program", async ({page}) => {
   await page.getByRole('textbox', { name: 'Username' }).fill(data.Username)
   await page.getByRole('textbox', { name: 'Password' }).fill(data.Password)
  await page.getByRole('button', { name: 'Login' }).click()
-   await page.getByText('Admin').click()
+   await page.getByText('Admin').first().click()
   await page.getByText('Job', { exact: true }).click()
   await page.getByText('Job Titles').click()
   await page.getByRole('button', { name: 'Add' }).click()
